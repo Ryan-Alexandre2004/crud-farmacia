@@ -13,9 +13,18 @@ public class Categoria {
 	private Long id;
 	private String nome;
 	private String descricao;
+	private String titulo;
 
 	public Long getId() {
 		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public void setId(Long id) {

@@ -32,6 +32,11 @@ public class CategoriaController {
 		return categoria.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 	}
 
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<Categoria>> getByTitulo(@PathVariable String titulo) {
+		return ResponseEntity.ok(categoriaRepository.findAllByTituloContainingIgnoreCase(titulo));
+	}
+
 	@PutMapping("/{id}")
 	public ResponseEntity<Categoria> atualizarCategoria(@PathVariable Long id,
 			@RequestBody Categoria categoriaAtualizada) {
